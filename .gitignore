@@ -2,14 +2,14 @@
 /dist
 /node_modules
 
-./backend/node_modules
-backend/node_modules
-/backend/node_modules
-./backend/node_modules/
-backend/node_modules/
-/backend/node_modules/
-./backend/dist/
-backend/dist/
+./gateway/node_modules
+gateway/node_modules
+/gateway/node_modules
+./gateway/node_modules/
+gateway/node_modules/
+/gateway/node_modules/
+./gateway/dist/
+gateway/dist/
 /backend/dist/
 
 # Logs
