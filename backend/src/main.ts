@@ -17,7 +17,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   
-  await app.listen(3000);
+  await app.listen(8000);
   if (module.hot) {
     module.hot.accept();
     module.hot.dispose(() => app.close());
