@@ -1,4 +1,4 @@
-import { Controller, Get, Logger } from '@nestjs/common';
+import { Controller, Get, Logger, Param } from '@nestjs/common';
 import { MessagePattern } from '@nestjs/microservices';
 import { Payload } from '@nestjs/microservices';
 import { AppService } from './app.service';
@@ -24,9 +24,15 @@ export class AppController {
     return await this.appService.findAll();
   }
 
-  @MessagePattern('create')
+  @MessagePattern('create-user')
   async create(@Payload() data: any): Promise<UserEntity> {
     this.logger.log(`User: ${JSON.stringify(data)}`)
     return await this.appService.create(data.value);
+  }
+
+  @MessagePattern('find-by-name')
+  async findByName(@Param(':id') id: number): Promise<UserEntity> {
+    this.logger.log(`User: ${id}`)
+    return await this.appService.findOne(id);
   }
 }

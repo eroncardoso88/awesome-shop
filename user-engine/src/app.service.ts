@@ -18,15 +18,15 @@ export class AppService {
     return await this.userReporitory.find()
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  async findOne(id: number):Promise<UserEntity> {
+    return await this.userReporitory.findOneOrFail(id)
   }
 
-  update(id: number, User: User) {
-    return `This action updates a #${id} user`;
-  }
+  // async update(id: number, User: User):Promise<UserEntity> {
+  //   return await this.userReporitory.update()
+  // }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
-  }
+  // async remove(id: number):Promise<UserEntity> {
+  //   return await this.userReporitory.find()
+  // }
 }
